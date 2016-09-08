@@ -1,0 +1,15 @@
+version: '2'
+services:
+  postgresql:
+    image: postgres:9.6
+    expose:
+      - "5432"
+  elasticsearch:
+    image: elasticsearch:1.7
+    expose:
+      - "9200"
+      - "9300"
+  redis:
+    image: redis:3.0
+    expose:
+      - "6379"
