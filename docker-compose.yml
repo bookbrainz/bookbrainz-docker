@@ -13,9 +13,9 @@ services:
     image: redis:3.0
     expose:
       - "6379"
-  bookbrainz-site:
+  site:
     build:
-      context: bookbrainz-site
+      context: site
       args:
         MB_OAUTH_CLIENT_ID: MBOAuthClientID
         MB_OAUTH_CLIENT_SECRET: MBOAuthClientSecret
