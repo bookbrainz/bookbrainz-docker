@@ -27,4 +27,4 @@ COPY ./scripts/CreateDB.sh /CreateDB.sh
 COPY ./scripts/Start.sh /Start.sh
 COPY ./scripts/Debug.sh /Debug.sh
 
-CMD ["/Start.sh"]
+CMD ["/Debug.sh"]
