@@ -23,9 +23,18 @@ services:
         SESSION_SECRET: SessionSecret
     volumes:
       - "./dumps:/dumps"
+    ports:
+      - "9099:9099"
+  site-dev:
+    extends: site
     links:
       - "postgresql:db"
       - "redis:redis"
       - "elasticsearch:es"
-    ports:
-      - "9099:9099"
+  site-prod:
+    extends: site
+    command: /Start.sh
+    links:
+      - "postgresql:db"
+      - "redis:redis"
+      - "elasticsearch:es"
