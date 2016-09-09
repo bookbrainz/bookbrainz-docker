@@ -17,10 +17,14 @@ ARG MB_OAUTH_CLIENT_SECRET
 ARG MB_OAUTH_CALLBACK_URL
 ARG SESSION_SECRET
 
+COPY ./scripts/RewriteConfig.sh /RewriteConfig.sh
 WORKDIR /apps/bookbrainz-site/config
-RUN cp development.json.example development.json
+RUN /RewriteConfig.sh
+
+WORKDIR /apps/bookbrainz-site
 
 COPY ./scripts/CreateDB.sh /CreateDB.sh
 COPY ./scripts/Start.sh /Start.sh
+COPY ./scripts/Debug.sh /Debug.sh
 
 CMD ["/Start.sh"]
