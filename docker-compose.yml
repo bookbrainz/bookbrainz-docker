@@ -13,3 +13,9 @@ services:
     image: redis:3.0
     expose:
       - "6379"
+  bookbrainz-site:
+    build: bookbrainz-site
+    volumes:
+      - "./dumps:/dumps"
+    links:
+      - "postgresql:db"
