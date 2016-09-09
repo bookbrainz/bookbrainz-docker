@@ -14,7 +14,13 @@ services:
     expose:
       - "6379"
   bookbrainz-site:
-    build: bookbrainz-site
+    build:
+      context: bookbrainz-site
+      args:
+        MB_OAUTH_CLIENT_ID: MBOAuthClientID
+        MB_OAUTH_CLIENT_SECRET: MBOAuthClientSecret
+        MB_OAUTH_CALLBACK_URL: http:\/\/localhost:9099\/cb
+        SESSION_SECRET: SessionSecret
     volumes:
       - "./dumps:/dumps"
     links:

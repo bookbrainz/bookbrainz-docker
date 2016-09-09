@@ -12,6 +12,11 @@ WORKDIR /apps/bookbrainz-site
 
 RUN npm install
 
+ARG MB_OAUTH_CLIENT_ID
+ARG MB_OAUTH_CLIENT_SECRET
+ARG MB_OAUTH_CALLBACK_URL
+ARG SESSION_SECRET
+
 WORKDIR /apps/bookbrainz-site/config
 RUN cp development.json.example development.json
 
