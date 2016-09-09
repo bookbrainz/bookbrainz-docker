@@ -2,4 +2,4 @@
 
 ./node_modules/.bin/gulp compress
 ./node_modules/.bin/gulp less
-npm run debug
+NODE_ENV=production npm start
