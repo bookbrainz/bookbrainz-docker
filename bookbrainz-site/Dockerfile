@@ -1,9 +1,10 @@
 FROM node:6.5
 MAINTAINER lordsputnik+docker@metabrainz.org
 
-RUN apt-get update && \
-  apt-get install -y \
-    postgresql-client-9.4
+# Avoid warnings during subsequent apt-get install
+RUN apt-get update && apt-get install -y apt-utils
+
+RUN apt-get install -y postgresql-client-9.4
 
 WORKDIR /apps
 RUN git clone --recursive https://github.com/bookbrainz/bookbrainz-site.git
