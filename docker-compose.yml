@@ -27,3 +27,5 @@ services:
       - "postgresql:db"
       - "redis:redis"
       - "elasticsearch:es"
+    ports:
+      - "9099:9099"
