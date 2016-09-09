@@ -25,3 +25,5 @@ services:
       - "./dumps:/dumps"
     links:
       - "postgresql:db"
+      - "redis:redis"
+      - "elasticsearch:es"
