@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
 
-./node_modules/.bin/gulp compress
-./node_modules/.bin/gulp less
+npm install --unsafe-perm
 NODE_ENV=production npm start

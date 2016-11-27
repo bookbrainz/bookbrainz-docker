@@ -8,9 +8,6 @@ RUN apt-get install -y postgresql-client-9.4
 
 WORKDIR /apps
 RUN git clone --recursive https://github.com/bookbrainz/bookbrainz-site.git
-WORKDIR /apps/bookbrainz-site
-
-RUN npm install
 
 ARG MB_OAUTH_CLIENT_ID
 ARG MB_OAUTH_CLIENT_SECRET
