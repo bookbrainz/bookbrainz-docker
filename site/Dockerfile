@@ -13,6 +13,7 @@ ARG MB_OAUTH_CLIENT_ID
 ARG MB_OAUTH_CLIENT_SECRET
 ARG MB_OAUTH_CALLBACK_URL
 ARG SESSION_SECRET
+ARG ENABLE_INFLUX
 
 COPY ./scripts/RewriteConfig.sh /RewriteConfig.sh
 WORKDIR /apps/bookbrainz-site/config
