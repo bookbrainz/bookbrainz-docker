@@ -2,6 +2,11 @@
 
 cp development.json.example config.json
 
+# Check if ENABLE_INFLUX is set (regardless of value)
+if [[ ${ENABLE_INFLUX+x} ]]
+then
+  sed -i "s|\"site\": {|\"influx\": {},\n\t\"site\": {|" config.json
+fi
 sed -i "s/\"clientID\": \"\"/\"clientID\": \"$MB_OAUTH_CLIENT_ID\"/" config.json
 sed -i "s/\"clientSecret\": \"\"/\"clientSecret\": \"$MB_OAUTH_CLIENT_SECRET\"/" config.json
 sed -i "s/\"callbackURL\": \"\"/\"callbackURL\": \"$MB_OAUTH_CALLBACK_URL\"/" config.json
