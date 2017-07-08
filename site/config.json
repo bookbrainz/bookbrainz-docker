@@ -1,0 +1,35 @@
+{
+	"site": {
+		"proxyTrust": true,
+		"log": "debug"
+	},
+	"musicbrainz": {
+		"clientID": "",
+		"clientSecret": "",
+		"callbackURL": ""
+	},
+	"session": {
+		"secret": "Something here!",
+		"secure": false,
+		"redis": {
+			"host": "redis",
+			"port": 6379,
+			"ttl": 3600
+		}
+	},
+	"database": {
+		"client": "pg",
+		"connection": {
+			"host": "db",
+			"database": "bookbrainz",
+			"user": "postgres",
+			"password": ""
+		}
+	},
+	"search": {
+		"host": "es:9200"
+	},
+	"influx": {
+		"host": "influx"
+	}
+}

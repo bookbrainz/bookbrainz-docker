@@ -15,6 +15,7 @@ ARG MB_OAUTH_CALLBACK_URL
 ARG SESSION_SECRET
 ARG ENABLE_INFLUX
 
+COPY ./config.json /apps/bookbrainz-site/config/config.json
 COPY ./scripts/RewriteConfig.sh /RewriteConfig.sh
 WORKDIR /apps/bookbrainz-site/config
 RUN /RewriteConfig.sh
