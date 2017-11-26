@@ -1,4 +1,4 @@
-FROM node:6.5
+FROM node:8.9
 MAINTAINER lordsputnik+docker@metabrainz.org
 
 # Avoid warnings during subsequent apt-get install
