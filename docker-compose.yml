@@ -13,6 +13,15 @@ services:
     image: redis:3.0
     expose:
       - "6379"
+  influx:
+    image: influxdb:1.4
+    expose:
+      - "8086"
+      - "8083"
+    environment:
+      - INFLUXDB_DB=bookbrainz
+      - INFLUXDB_USER=grafana
+      - INFLUXDB_USER_PASSWORD=grafana
   site:
     build:
       context: site
@@ -31,6 +40,7 @@ services:
       - "postgresql:db"
       - "redis:redis"
       - "elasticsearch:es"
+      - "influx:influx"
   site-prod:
     extends: site
     command: /Start.sh
@@ -38,3 +48,4 @@ services:
       - "postgresql:db"
       - "redis:redis"
       - "elasticsearch:es"
+      - "influx:influx"
